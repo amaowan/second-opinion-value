@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+analysis/numbers_*.tex
+analysis/tab_*.tex
+analysis/fig_*.pdf
+analysis/fig_*.png
+*.zip
