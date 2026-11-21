@@ -13,12 +13,3 @@ The files contain probabilities, labels and post identifiers only, never the tex
 | `zh_llm/Qwen3-4B-LoRAW-ep3/usual/` | step 6 (`e15b_zh_complement_lora_kaggle.py`, weighted) | the four `*_probs.npy` files |
 | `en/seed{42,43,44}/` | step 1 (`goemotions_roberta_kaggle.py`), one run per seed | `test_probs.npy`, `test_labels.npy` (the script writes them to its output root, so move each run's files into its seed folder) |
 | `tasks/{nli,toxicity,cold}/` | step 7 (`g1_task_pipeline_kaggle.py`) | `labels/`, `agree/`, `enc/half{0,1}/seed{42,43}/`, `llm/{zs_qwen3_4b,zs_qwen25_3b,lora_half0,lora_half1}/` |
-
-Do not include:
-
-- LoRA adapter folders (`lora_adapter_ep*`, `lora_weighted_ep*`). They are large, and the analysis does not need them.
-- Probabilities from LoRA epochs 1 and 2 (`*-ep1`, `*-ep2`).
-- Outputs of the `complement` LoRA variant, the second-family runs (`zs_x`, `lora_x_*`) and any exploratory notebook.
-- Any copy of the SMP2020-EWECT archive or its text files.
-
-GitHub rejects files larger than 100 MB. All prediction arrays in this project are far smaller than that, but check the total size before you upload.
