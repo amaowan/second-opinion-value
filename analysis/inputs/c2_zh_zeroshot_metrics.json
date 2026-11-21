@@ -1,0 +1,12 @@
+{"models": ["Qwen/Qwen3-4B-Instruct-2507"],
+ "runs": {
+  "Qwen3-4B-Instruct-2507|v1": {
+   "usual_eval": {"label_token_mass_mean": 0.9885950684547424},
+   "usual_test": {"accuracy": 0.734, "label_token_mass_mean": 0.9891022443771362},
+   "virus_eval": {"label_token_mass_mean": 0.9894341826438904},
+   "virus_test": {"accuracy": 0.6683333333333333, "label_token_mass_mean": 0.9906737208366394},
+   "free_generation_check": {"n": 200, "parsed_rate": 0.995, "agreement_among_parsed": 0.9949748743718593}},
+  "Qwen3-4B-Instruct-2507|v2": {
+   "usual_test": {"accuracy": 0.7366, "label_token_mass_mean": 0.9973400235176086},
+   "virus_test": {"accuracy": 0.7143333333333334, "label_token_mass_mean": 0.9965592622756958},
+   "free_generation_check": {"n": 200, "parsed_rate": 1.0, "agreement_among_parsed": 1.0}}}}

@@ -1,0 +1,12 @@
+# Analysis (analysis/ and experiments/a1_three_layer_kaggle.py)
+numpy>=2.1
+scipy
+scikit-learn>=1.6
+matplotlib
+datasets            # a1 reloads MNLI / ChaosNLI to rebuild premise clusters
+# Training scripts (experiments/), as used on Kaggle in November 2026
+torch>=2.11
+transformers>=5.20
+peft>=0.21
+pandas
+huggingface_hub
