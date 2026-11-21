@@ -122,6 +122,22 @@ for jk, v in diag.items():
     A[f"cn-{jk}-aggold"] = f"{100 * v['ag_gold']:.0f}"
 print("ChaosNLI diagnosis:", {k: {a: round(float(b), 3) for a, b in v.items()} for k, v in diag.items()})
 
+# ---------- binary tasks: fine-tuned LLM trained on the same half as A versus the other half ----------
+# Gated gain at 20% from the item tables of the main analysis (inputs/a1_items_{task}.npz).
+hd = []
+for t in ("nli", "toxicity", "cold"):
+    d = np.load(f"inputs/a1_items_{t}.npz")
+    y = d["y_test"]; n = len(y); k = int(np.floor(0.2 * n))
+    same, other = [], []
+    for h in "AB":
+        for sd in ("42", "43"):
+            pa = d[f"prob|编码器{h}{sd}"]; a = pa.argmax(1); call = np.argsort(pa.max(1), kind="stable")[:k]
+            for L in "AB":
+                b = d[f"pred|LoRA_{L}"]
+                (same if L == h else other).append(((b[call] == y[call]).sum() - (a[call] == y[call]).sum()) / n)
+    hd.append(abs(np.mean(same) - np.mean(other)))
+A["halfdiff-max"] = f"{100 * max(hd):.2f}"
+
 # ---------- label-flip simulation ----------
 # Two equal-variance judges with true within-class correlation rho; 80% positive items;
 # each judge thresholds its decision variable at d'/2; a share eta of reference labels is flipped.
