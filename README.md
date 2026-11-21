@@ -46,7 +46,7 @@ Each script runs as a single Kaggle notebook cell. Run them in this order. The s
 
 | Step | Script | What it does | GPU time | Paper |
 |---|---|---|---|---|
-| 1 | `goemotions_roberta_kaggle.py` | RoBERTa-base on GoEmotions (Ekman 7). Run with `SEED` = 42, 43, 44 | 20–30 min each | Sec. 4.1 |
+| 1 | `p0_robustness_kaggle.py` | Trains RoBERTa-base on GoEmotions (Ekman 7) with seeds 42, 43 and 44 and writes `seed42/`, `seed43/`, `seed44/`. Only this training part is used in the paper. If the output of `goemotions_roberta_kaggle.py` (same settings, seed 42) is present in the session, seed 42 is reused from it | 60–80 min | Sec. 4.1 |
 | 2 | `c1_ewect_encoder_kaggle.py` | Cleans SMP2020-EWECT and trains chinese-roberta-wwm-ext on general and epidemic posts, 3 seeds each | 60–90 min | Sec. 4.1–4.2 |
 | 3 | `c2_zh_zeroshot_llm_kaggle.py` | Zero-shot Qwen3-4B on Chinese emotion and the free-generation check | 30–60 min | Sec. 4.2, App. A |
 | 4 | `e14_zh_lora_verifier_kaggle.py` | LoRA Qwen3-4B on Chinese emotion, 3 epochs | about 5.5 h | Sec. 4.2 |
@@ -55,7 +55,7 @@ Each script runs as a single Kaggle notebook cell. Run them in this order. The s
 | 7 | `g1_task_pipeline_kaggle.py` | NLI, toxicity and COLD: data, encoders, zero-shot LLMs and LoRA judges. Run once per task with `G_TASK` = nli, toxicity, cold, `G_PART=all` and `G_XLLM` empty | 2–6 h per task | Sec. 4 |
 | 8 | `a1_three_layer_kaggle.py` | Main analysis on the outputs of steps 1–7 | none (1–2 h CPU) | Sec. 5 |
 
-In Kaggle, the outputs of steps 1–7 are attached to step 8 with **Add Input → Notebooks**. The analysis finds each judge by folder name, as listed in `predictions/MANIFEST.md`. The English encoder runs of step 1 must therefore sit in folders named `seed42`, `seed43` and `seed44`.
+In Kaggle, the outputs of steps 1–7 are attached to step 8 with **Add Input → Notebooks**. The analysis finds each judge by folder name, as listed in `predictions/MANIFEST.md`. Step 1 already writes the English encoders into folders named `seed42`, `seed43` and `seed44`.
 
 ## Data
 

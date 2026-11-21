@@ -1,0 +1,251 @@
+{
+  "task": "toxicity",
+  "encoder": "roberta-base",
+  "lora_model": "Qwen/Qwen3-4B-Instruct-2507",
+  "zero_shot": {
+    "zs_qwen3_4b": "Qwen/Qwen3-4B-Instruct-2507",
+    "zs_qwen25_3b": "Qwen/Qwen2.5-3B-Instruct"
+  },
+  "sizes": {
+    "train": 29937,
+    "half_A": 14969,
+    "half_B": 14968,
+    "dev": 2000,
+    "test": 6000
+  },
+  "positive_rate": {
+    "train": 0.2996292213648662,
+    "dev": 0.3,
+    "test": 0.3
+  },
+  "test_items_with_rater_distribution": 6000,
+  "minutes_so_far": 185.25867060422897,
+  "encoders": {
+    "half0|seed42": {
+      "dev": {
+        "accuracy": 0.9035,
+        "auc": 0.9655261904761905,
+        "hit_rate": 0.88,
+        "false_alarm_rate": 0.08642857142857142
+      },
+      "test": {
+        "accuracy": 0.9175,
+        "auc": 0.971898544973545,
+        "hit_rate": 0.9061111111111111,
+        "false_alarm_rate": 0.07761904761904762
+      }
+    },
+    "half0|seed43": {
+      "dev": {
+        "accuracy": 0.908,
+        "auc": 0.9641297619047619,
+        "hit_rate": 0.8816666666666667,
+        "false_alarm_rate": 0.08071428571428571
+      },
+      "test": {
+        "accuracy": 0.917,
+        "auc": 0.9730056216931217,
+        "hit_rate": 0.9022222222222223,
+        "false_alarm_rate": 0.07666666666666666
+      }
+    },
+    "half1|seed42": {
+      "dev": {
+        "accuracy": 0.913,
+        "auc": 0.969760119047619,
+        "hit_rate": 0.8766666666666667,
+        "false_alarm_rate": 0.07142857142857142
+      },
+      "test": {
+        "accuracy": 0.9161666666666667,
+        "auc": 0.9704059523809524,
+        "hit_rate": 0.8983333333333333,
+        "false_alarm_rate": 0.0761904761904762
+      }
+    },
+    "half1|seed43": {
+      "dev": {
+        "accuracy": 0.908,
+        "auc": 0.9693547619047619,
+        "hit_rate": 0.8666666666666667,
+        "false_alarm_rate": 0.07428571428571429
+      },
+      "test": {
+        "accuracy": 0.9168333333333333,
+        "auc": 0.9708277116402116,
+        "hit_rate": 0.8911111111111111,
+        "false_alarm_rate": 0.07214285714285715
+      }
+    }
+  },
+  "llm": {
+    "zs_qwen3_4b": {
+      "dev": {
+        "accuracy": 0.661,
+        "auc": 0.8355571428571429,
+        "hit_rate": 0.9083333333333333,
+        "false_alarm_rate": 0.445
+      },
+      "test": {
+        "accuracy": 0.66,
+        "auc": 0.8325679894179894,
+        "hit_rate": 0.9111111111111111,
+        "false_alarm_rate": 0.44761904761904764
+      },
+      "answer_token_mass": {
+        "dev": 1.0,
+        "test": 1.0
+      },
+      "loss_log": []
+    },
+    "zs_qwen25_3b": {
+      "dev": {
+        "accuracy": 0.488,
+        "auc": 0.7761083333333333,
+        "hit_rate": 0.98,
+        "false_alarm_rate": 0.7228571428571429
+      },
+      "test": {
+        "accuracy": 0.49566666666666664,
+        "auc": 0.7977749338624338,
+        "hit_rate": 0.9733333333333334,
+        "false_alarm_rate": 0.709047619047619
+      },
+      "answer_token_mass": {
+        "dev": 0.9999998211860657,
+        "test": 0.9999998211860657
+      },
+      "loss_log": []
+    },
+    "lora_half0": {
+      "dev": {
+        "accuracy": 0.9135,
+        "auc": 0.9679797619047619,
+        "hit_rate": 0.84,
+        "false_alarm_rate": 0.055
+      },
+      "test": {
+        "accuracy": 0.9146666666666666,
+        "auc": 0.9676471560846561,
+        "hit_rate": 0.8444444444444444,
+        "false_alarm_rate": 0.05523809523809524
+      },
+      "answer_token_mass": {
+        "dev": 0.9998188614845276,
+        "test": 0.9998257756233215
+      },
+      "loss_log": [
+        {
+          "micro_step": 200,
+          "loss": 0.9051544243295211,
+          "minutes": 6.4919233322143555
+        },
+        {
+          "micro_step": 400,
+          "loss": 0.323588852728717,
+          "minutes": 12.711388063430785
+        },
+        {
+          "micro_step": 600,
+          "loss": 0.25631431323010473,
+          "minutes": 18.96122430562973
+        },
+        {
+          "micro_step": 800,
+          "loss": 0.2222676679864526,
+          "minutes": 24.801260594526926
+        },
+        {
+          "micro_step": 1000,
+          "loss": 0.2394004671415314,
+          "minutes": 30.946779835224152
+        },
+        {
+          "micro_step": 1200,
+          "loss": 0.22835915007628502,
+          "minutes": 37.39237877925237
+        },
+        {
+          "micro_step": 1400,
+          "loss": 0.2324370715301484,
+          "minutes": 43.318213792641956
+        },
+        {
+          "micro_step": 1600,
+          "loss": 0.1992022444284521,
+          "minutes": 49.27014992237091
+        },
+        {
+          "micro_step": 1800,
+          "loss": 0.20867221049964427,
+          "minutes": 55.44758573770523
+        }
+      ]
+    },
+    "lora_half1": {
+      "dev": {
+        "accuracy": 0.913,
+        "auc": 0.9686678571428572,
+        "hit_rate": 0.8466666666666667,
+        "false_alarm_rate": 0.05857142857142857
+      },
+      "test": {
+        "accuracy": 0.9136666666666666,
+        "auc": 0.9681671957671958,
+        "hit_rate": 0.8527777777777777,
+        "false_alarm_rate": 0.060238095238095236
+      },
+      "answer_token_mass": {
+        "dev": 0.9999038577079773,
+        "test": 0.9999057054519653
+      },
+      "loss_log": [
+        {
+          "micro_step": 200,
+          "loss": 0.8701814120169729,
+          "minutes": 6.442000182469686
+        },
+        {
+          "micro_step": 400,
+          "loss": 0.3252695702761412,
+          "minutes": 12.84712370634079
+        },
+        {
+          "micro_step": 600,
+          "loss": 0.2689165913616307,
+          "minutes": 18.914342006047566
+        },
+        {
+          "micro_step": 800,
+          "loss": 0.23780714136082678,
+          "minutes": 24.764223325252534
+        },
+        {
+          "micro_step": 1000,
+          "loss": 0.24468392855953425,
+          "minutes": 30.839370063940684
+        },
+        {
+          "micro_step": 1200,
+          "loss": 0.21730872781481594,
+          "minutes": 37.29625032345454
+        },
+        {
+          "micro_step": 1400,
+          "loss": 0.2272630853683222,
+          "minutes": 43.36121583779653
+        },
+        {
+          "micro_step": 1600,
+          "loss": 0.24295810937415807,
+          "minutes": 49.41446639696757
+        },
+        {
+          "micro_step": 1800,
+          "loss": 0.23801643717102705,
+          "minutes": 55.60415136019389
+        }
+      ]
+    }
+  }
+}

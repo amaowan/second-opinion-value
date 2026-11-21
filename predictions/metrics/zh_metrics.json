@@ -1,0 +1,363 @@
+{
+  "model": "hfl/chinese-roberta-wwm-ext",
+  "labels": [
+    "angry",
+    "fear",
+    "happy",
+    "sad",
+    "surprise",
+    "neutral"
+  ],
+  "epochs": 3,
+  "batch_size": 32,
+  "lr": 2e-05,
+  "max_len": 192,
+  "train_cleaning": {
+    "usual_train": {
+      "original": 27768,
+      "removed_overlap_with_eval_or_test": 435,
+      "removed_duplicates": 673,
+      "duplicates_with_conflicting_labels": 82,
+      "kept": 26660
+    },
+    "virus_train": {
+      "original": 8606,
+      "removed_overlap_with_eval_or_test": 880,
+      "removed_duplicates": 243,
+      "duplicates_with_conflicting_labels": 31,
+      "kept": 7483
+    }
+  },
+  "runs": {
+    "usual|seed42": {
+      "eval_per_epoch": [
+        {
+          "accuracy": 0.7855,
+          "macro_f1": 0.7502206172316671,
+          "pred_neutral_rate": 0.1795,
+          "gold_neutral_rate": 0.21
+        },
+        {
+          "accuracy": 0.7995,
+          "macro_f1": 0.7668966794170614,
+          "pred_neutral_rate": 0.2035,
+          "gold_neutral_rate": 0.21
+        },
+        {
+          "accuracy": 0.7945,
+          "macro_f1": 0.7640350361573987,
+          "pred_neutral_rate": 0.1975,
+          "gold_neutral_rate": 0.21
+        }
+      ],
+      "usual_eval": {
+        "accuracy": 0.7945,
+        "macro_f1": 0.7640350361573987,
+        "pred_neutral_rate": 0.1975,
+        "gold_neutral_rate": 0.21
+      },
+      "usual_test": {
+        "accuracy": 0.7858,
+        "macro_f1": 0.7617066868599766,
+        "pred_neutral_rate": 0.195,
+        "gold_neutral_rate": 0.198
+      },
+      "virus_eval": {
+        "accuracy": 0.727,
+        "macro_f1": 0.5969904442542969,
+        "pred_neutral_rate": 0.235,
+        "gold_neutral_rate": 0.238
+      },
+      "virus_test": {
+        "accuracy": 0.7366666666666667,
+        "macro_f1": 0.5987213752452745,
+        "pred_neutral_rate": 0.186,
+        "gold_neutral_rate": 0.17333333333333334
+      }
+    },
+    "usual|seed43": {
+      "eval_per_epoch": [
+        {
+          "accuracy": 0.784,
+          "macro_f1": 0.7512657290754512,
+          "pred_neutral_rate": 0.206,
+          "gold_neutral_rate": 0.21
+        },
+        {
+          "accuracy": 0.7895,
+          "macro_f1": 0.7554102326702337,
+          "pred_neutral_rate": 0.189,
+          "gold_neutral_rate": 0.21
+        },
+        {
+          "accuracy": 0.788,
+          "macro_f1": 0.7584851249434982,
+          "pred_neutral_rate": 0.1945,
+          "gold_neutral_rate": 0.21
+        }
+      ],
+      "usual_eval": {
+        "accuracy": 0.788,
+        "macro_f1": 0.7584851249434982,
+        "pred_neutral_rate": 0.1945,
+        "gold_neutral_rate": 0.21
+      },
+      "usual_test": {
+        "accuracy": 0.7864,
+        "macro_f1": 0.7607412552756433,
+        "pred_neutral_rate": 0.1952,
+        "gold_neutral_rate": 0.198
+      },
+      "virus_eval": {
+        "accuracy": 0.736,
+        "macro_f1": 0.6129388127944063,
+        "pred_neutral_rate": 0.2345,
+        "gold_neutral_rate": 0.238
+      },
+      "virus_test": {
+        "accuracy": 0.7406666666666667,
+        "macro_f1": 0.5946988855096004,
+        "pred_neutral_rate": 0.181,
+        "gold_neutral_rate": 0.17333333333333334
+      }
+    },
+    "usual|seed44": {
+      "eval_per_epoch": [
+        {
+          "accuracy": 0.783,
+          "macro_f1": 0.7510040894808662,
+          "pred_neutral_rate": 0.201,
+          "gold_neutral_rate": 0.21
+        },
+        {
+          "accuracy": 0.7885,
+          "macro_f1": 0.7547591598505091,
+          "pred_neutral_rate": 0.1785,
+          "gold_neutral_rate": 0.21
+        },
+        {
+          "accuracy": 0.79,
+          "macro_f1": 0.7576239111538268,
+          "pred_neutral_rate": 0.194,
+          "gold_neutral_rate": 0.21
+        }
+      ],
+      "usual_eval": {
+        "accuracy": 0.79,
+        "macro_f1": 0.7576239111538268,
+        "pred_neutral_rate": 0.194,
+        "gold_neutral_rate": 0.21
+      },
+      "usual_test": {
+        "accuracy": 0.7872,
+        "macro_f1": 0.7638850197031227,
+        "pred_neutral_rate": 0.192,
+        "gold_neutral_rate": 0.198
+      },
+      "virus_eval": {
+        "accuracy": 0.718,
+        "macro_f1": 0.5964754576964889,
+        "pred_neutral_rate": 0.253,
+        "gold_neutral_rate": 0.238
+      },
+      "virus_test": {
+        "accuracy": 0.736,
+        "macro_f1": 0.5992138273154749,
+        "pred_neutral_rate": 0.19066666666666668,
+        "gold_neutral_rate": 0.17333333333333334
+      }
+    },
+    "virus|seed42": {
+      "eval_per_epoch": [
+        {
+          "accuracy": 0.7715,
+          "macro_f1": 0.5548364759769714,
+          "pred_neutral_rate": 0.217,
+          "gold_neutral_rate": 0.238
+        },
+        {
+          "accuracy": 0.7835,
+          "macro_f1": 0.6386834313359034,
+          "pred_neutral_rate": 0.2075,
+          "gold_neutral_rate": 0.238
+        },
+        {
+          "accuracy": 0.7845,
+          "macro_f1": 0.6484453193343741,
+          "pred_neutral_rate": 0.212,
+          "gold_neutral_rate": 0.238
+        }
+      ],
+      "usual_eval": {
+        "accuracy": 0.678,
+        "macro_f1": 0.6156362807540265,
+        "pred_neutral_rate": 0.2605,
+        "gold_neutral_rate": 0.21
+      },
+      "usual_test": {
+        "accuracy": 0.6742,
+        "macro_f1": 0.6085491229108363,
+        "pred_neutral_rate": 0.2598,
+        "gold_neutral_rate": 0.198
+      },
+      "virus_eval": {
+        "accuracy": 0.7845,
+        "macro_f1": 0.6484453193343741,
+        "pred_neutral_rate": 0.212,
+        "gold_neutral_rate": 0.238
+      },
+      "virus_test": {
+        "accuracy": 0.803,
+        "macro_f1": 0.6795195830072585,
+        "pred_neutral_rate": 0.16766666666666666,
+        "gold_neutral_rate": 0.17333333333333334
+      }
+    },
+    "virus|seed43": {
+      "eval_per_epoch": [
+        {
+          "accuracy": 0.773,
+          "macro_f1": 0.5725484338750454,
+          "pred_neutral_rate": 0.2545,
+          "gold_neutral_rate": 0.238
+        },
+        {
+          "accuracy": 0.7795,
+          "macro_f1": 0.6462449506318256,
+          "pred_neutral_rate": 0.212,
+          "gold_neutral_rate": 0.238
+        },
+        {
+          "accuracy": 0.786,
+          "macro_f1": 0.6577828839080159,
+          "pred_neutral_rate": 0.232,
+          "gold_neutral_rate": 0.238
+        }
+      ],
+      "usual_eval": {
+        "accuracy": 0.6565,
+        "macro_f1": 0.5820980549369598,
+        "pred_neutral_rate": 0.2795,
+        "gold_neutral_rate": 0.21
+      },
+      "usual_test": {
+        "accuracy": 0.658,
+        "macro_f1": 0.5841776331117173,
+        "pred_neutral_rate": 0.2808,
+        "gold_neutral_rate": 0.198
+      },
+      "virus_eval": {
+        "accuracy": 0.786,
+        "macro_f1": 0.6577828839080159,
+        "pred_neutral_rate": 0.232,
+        "gold_neutral_rate": 0.238
+      },
+      "virus_test": {
+        "accuracy": 0.8003333333333333,
+        "macro_f1": 0.660434775559474,
+        "pred_neutral_rate": 0.177,
+        "gold_neutral_rate": 0.17333333333333334
+      }
+    },
+    "virus|seed44": {
+      "eval_per_epoch": [
+        {
+          "accuracy": 0.763,
+          "macro_f1": 0.5889182196240482,
+          "pred_neutral_rate": 0.2555,
+          "gold_neutral_rate": 0.238
+        },
+        {
+          "accuracy": 0.7835,
+          "macro_f1": 0.6351795892728184,
+          "pred_neutral_rate": 0.1875,
+          "gold_neutral_rate": 0.238
+        },
+        {
+          "accuracy": 0.786,
+          "macro_f1": 0.6565472799557184,
+          "pred_neutral_rate": 0.2185,
+          "gold_neutral_rate": 0.238
+        }
+      ],
+      "usual_eval": {
+        "accuracy": 0.668,
+        "macro_f1": 0.6052672390101669,
+        "pred_neutral_rate": 0.256,
+        "gold_neutral_rate": 0.21
+      },
+      "usual_test": {
+        "accuracy": 0.6768,
+        "macro_f1": 0.6120943910160285,
+        "pred_neutral_rate": 0.2558,
+        "gold_neutral_rate": 0.198
+      },
+      "virus_eval": {
+        "accuracy": 0.786,
+        "macro_f1": 0.6565472799557184,
+        "pred_neutral_rate": 0.2185,
+        "gold_neutral_rate": 0.238
+      },
+      "virus_test": {
+        "accuracy": 0.8,
+        "macro_f1": 0.6667545631069558,
+        "pred_neutral_rate": 0.16533333333333333,
+        "gold_neutral_rate": 0.17333333333333334
+      }
+    }
+  },
+  "summary": {
+    "usual->usual_eval": {
+      "macro_f1_mean": 0.7600480240849078,
+      "macro_f1_std": 0.0028410820998955653,
+      "accuracy_mean": 0.7908333333333334,
+      "accuracy_std": 0.002718251071716659
+    },
+    "usual->usual_test": {
+      "macro_f1_mean": 0.7621109872795809,
+      "macro_f1_std": 0.0013148910768172482,
+      "accuracy_mean": 0.7864666666666666,
+      "accuracy_std": 0.0005734883511361592
+    },
+    "usual->virus_eval": {
+      "macro_f1_mean": 0.602134904915064,
+      "macro_f1_std": 0.007642408952141822,
+      "accuracy_mean": 0.727,
+      "accuracy_std": 0.0073484692283495405
+    },
+    "usual->virus_test": {
+      "macro_f1_mean": 0.59754469602345,
+      "macro_f1_std": 0.0020223097967280905,
+      "accuracy_mean": 0.7377777777777778,
+      "accuracy_std": 0.0020608041101101687
+    },
+    "virus->usual_eval": {
+      "macro_f1_mean": 0.6010005249003844,
+      "macro_f1_std": 0.014020384795244955,
+      "accuracy_mean": 0.6675,
+      "accuracy_std": 0.008784455968736322
+    },
+    "virus->usual_test": {
+      "macro_f1_mean": 0.6016070490128608,
+      "macro_f1_std": 0.012409153489143815,
+      "accuracy_mean": 0.6696666666666666,
+      "accuracy_std": 0.00831758511962588
+    },
+    "virus->virus_eval": {
+      "macro_f1_mean": 0.6542584943993695,
+      "macro_f1_std": 0.0041413711524844864,
+      "accuracy_mean": 0.7855,
+      "accuracy_std": 0.0007071067811865744
+    },
+    "virus->virus_test": {
+      "macro_f1_mean": 0.6689029738912294,
+      "macro_f1_std": 0.007938061077418472,
+      "accuracy_mean": 0.8011111111111111,
+      "accuracy_std": 0.0013425606637327385
+    },
+    "majority_baseline|usual_eval": 0.293,
+    "majority_baseline|usual_test": 0.3016,
+    "majority_baseline|virus_eval": 0.4615,
+    "majority_baseline|virus_test": 0.5133333333333333
+  }
+}
